@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Django Demo Project</title>
+    </head>
+    <body>
+        <h1>Welcome Divyanshu</h1>
+        {% if user_info %}
+            {% for val in user_info %}
+                <ul>
+                    <li>{{ val.first_name }}</li>
+                    <li>{{ val.last_name }}</li>
+                    <li>{{ val.email }}</li>
+                </ul>
+            {% endfor %}
+        {% endif %}
+    </body>
+</html>
