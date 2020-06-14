@@ -11,25 +11,21 @@
     <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <ul class="nav navbar-nav">
-
-          {# Django Home Link / Admin Link / Register Link#}
           <li><a class="navbar-brand" href="{% url 'index' %}">DJANGO</a></li>
           <li><a class="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
-          <li><a class="navbar-link" href="{% url 'basic_app:register' %}">Register</a></li>
-
-          {# Some logic on what to display for last item#}
-          {% if user.is_authenticated %}
-            <li><a class="navbar-link" href="{% url 'logout' %}">Logout</a></li>
-          {% else %}
-            <li><a class="navbar-link" href="{% url 'basic_app:user_login' %}">Login</a></li>
-          {% endif %}
-
+          <li><a class="navbar-link" href="{% url 'basic_app:other' %}">Other</a></li>
         </ul>
       </div>
     </nav>
     <div class="container">
+
+
+
     {% block body_block %}
+    {# Anything outside of this will be inherited if you use extend.#}
     {% endblock %}
     </div>
+
+
   </body>
 </html>
